@@ -1,10 +1,14 @@
 # pythonのバージョンは任意
-FROM python:3.12.2
+FROM python:3
 
-WORKDIR /usr/src/app
-ENV FLASK_APP=app
+RUN pip install Flask
+RUN pip install sqlalchemy
 
-COPY ../requirements.txt ./
+RUN pip install gunicorn
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+WORKDIR /Users/forwork/code/kiyokiyo-shrine
+
+# 現在のディレクトリの内容をコンテナ内の/appにコピー
+COPY . .
