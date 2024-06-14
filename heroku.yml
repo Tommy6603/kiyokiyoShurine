@@ -1,3 +1,5 @@
 build:
-   docker:
-     web: Dockerfile
+  languages:
+    - python
+run:
+  web: gunicorn --chdir src main:app --log-file - 
