@@ -1,5 +1,6 @@
 build:
   languages:
     - python-3.11
+  web: dockerfile
 run:
-  web: gunicorn --chdir src main:app --log-file - 
+  web: gunicorn run:app --log-file - 
