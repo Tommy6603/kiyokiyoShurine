@@ -1,6 +1,4 @@
 build:
-  languages:
-    - python-3.11
   docker:
     web: Dockerfile
 run:
