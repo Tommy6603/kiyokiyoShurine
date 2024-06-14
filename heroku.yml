@@ -1,6 +1,7 @@
 build:
   languages:
     - python-3.11
-  web: dockerfile
+  docker:
+    web: Dockerfile
 run:
   web: gunicorn run:app --log-file - 
